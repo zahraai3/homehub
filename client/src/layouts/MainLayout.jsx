@@ -1,12 +1,18 @@
 import { Outlet} from "react-router-dom";
 import BottomNav from "../shared/components/BottomNav";
+import HeaderNav from "../shared/components/HeaderNav";
+
+import styles from './MainLayout.module.css';
 
 const MainLayout = () => {
     return(
-        <>
-            <Outlet/>
+        <div className={styles.container}>
+            <HeaderNav/>
+            <main className={styles.main}>
+                <Outlet/>
+            </main>
             <BottomNav/>
-        </>
+        </div>
     )
 }
 
