@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 24px;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+}
+
+.header_title {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+.header_tagline {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
