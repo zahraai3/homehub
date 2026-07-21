@@ -1,0 +1,64 @@
+/* From Uiverse.io by andrew-demchenk0 */
+.wrapper {
+  border:2px solid var(--border-blck);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: var(--bg-subtle);
+  box-shadow: 4px 6px var(--border-blck);
+  min-width: 500px;
+
+}
+  
+.flip-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  margin: 20px 0 20px 0;
+  font-size: 35px;
+  font-weight: 900;
+  text-align: center;
+  color: var(--text-on-primary);
+}
+
+.flip-card__input {
+  width: 75%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 4px 6px var(--border-blck);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 5px 10px;
+  outline: none;
+}
+.flip-card__input::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.8;
+}
+.flip-card__input:focus {
+  border: 2px solid var(--border-strong);
+}
+
+.flip-card__btn {
+  margin: 20px 0 20px 0;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 4px 6px var(--border-blck);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.flip-card__btn:active {
+  box-shadow: 0px 0px var(--border-strong);
+  transform: translate(3px, 3px);
+}

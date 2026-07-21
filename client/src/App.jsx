@@ -7,7 +7,7 @@ import SettingPage from './features/settings/SettingPage'
 import TasksPage from './features/tasks/TasksPage'
 import ShoppingListPage from './features/shoppingList/ShoppingListPage'
 import ExpensesPage from './features/expenses/ExpensesPage'
-
+import RegisterForm from './features/auth/components/RegisterForm'
 
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
       <Routes>
         <Route element={<MainLayout/>}>
           <Route index element={<DashboardPage/>} />
+          <Route path="register" element={<RegisterForm/>} />
           <Route path="expenses" element={<ExpensesPage/>}/>
           <Route path="tasks" element={<TasksPage/>}/>
           <Route path="shoppinglist" element={<ShoppingListPage/>}/>

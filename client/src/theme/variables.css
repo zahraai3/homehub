@@ -22,7 +22,7 @@
     /* ---- Backgrounds ---- */
     --bg-primary:    var(--gray-0);   /* page background */
     --bg-secondary:  var(--gray-50);  /* section background */
-    --bg-elevated:   var(--gray-0);   /* cards / wireframe boxes */
+    --bg-elevated:   var(--gray-100);   /* cards / wireframe boxes */
     --bg-subtle:     var(--gray-600); /* hover / subtle highlight */
 
     --bg-test:red;
