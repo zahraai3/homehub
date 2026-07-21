@@ -25,54 +25,69 @@
         "title": "Rent",
         "total": 500,
         "deadline": "2026-11-30",
-        "splitBetween": [
-            "u1",
-            "u2",
-            "u3"
-        ],
-        "paidBy": [
-            "u1",
-            "u2"
-        ],
-        "owing": [
-            "u3"
-        ]
+        "participants": [
+            {
+                "memberId": "u1",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u2",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u3",
+                "amount": 150,
+                "paid": false
+            }
+            ]
         },
         {
         "id": "e2",
         "title": "Wifi",
         "total": 100,
         "deadline": "2026-11-30",
-        "splitBetween": [
-            "u1",
-            "u2",
-            "u3"
-        ],
-        "paidBy": [
-            "u1",
-            "u2"
-        ],
-        "owing": [
-            "u3"
-        ]
+        "participants": [
+            {
+                "memberId": "u1",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u2",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u3",
+                "amount": 150,
+                "paid": false
+            }
+            ]
         },
         {
         "id": "e3",
         "title": "Electric",
         "total": 100,
         "deadline": "2026-11-30",
-        "splitBetween": [
-            "u1",
-            "u2",
-            "u3"
-        ],
-        "paidBy": [
-            "u1",
-            "u2"
-        ],
-        "owing": [
-            "u3"
-        ]
+        "participants": [
+            {
+                "memberId": "u1",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u2",
+                "amount": 150,
+                "paid": true
+            },
+            {
+                "memberId": "u3",
+                "amount": 150,
+                "paid": false
+            }
+            ]
         }
     ],
     "tasks": [
