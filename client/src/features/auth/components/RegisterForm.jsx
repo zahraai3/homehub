@@ -7,6 +7,8 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [displayName,  setDisplayName] = useState('')
+    
     const {mutate, isPending, error} = useRegister();
 
     const handleSubmit = (e) => {
@@ -21,12 +23,22 @@ const RegisterForm = () => {
         setEmail('');
         setPassword('');
         setConfirmPassword('');
+        setDisplayName('')
     }
 
     return (
     <div className={styles.wrapper}>
         <div className={styles.title}>Hello, Lets start your journey</div>
             <form className={styles['flip-card__form']} onSubmit={handleSubmit}>
+                <input
+                    className={styles['flip-card__input']}
+                    name="displayName"
+                    placeholder="Display Name"
+                    type="text"
+                    required
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
+                />
                 <input
                     className={styles['flip-card__input']}
                     name="email"
