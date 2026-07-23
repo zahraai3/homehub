@@ -1,10 +1,10 @@
 import {useMutation} from "@tanstack/react-query";
-import {register} from '../../../services/authService';
+import { registerOwner } from "../../../services/registerOwner";
 
 
 const useRegister = () => {
     return useMutation({
-        mutationFn: ({email, password}) => register(email,password),
+        mutationFn: registerOwner,
 
         onSuccess: () => {
             console.log("User registered successfully");

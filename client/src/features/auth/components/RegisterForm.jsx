@@ -8,7 +8,7 @@ const RegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [displayName,  setDisplayName] = useState('')
-    
+
     const {mutate, isPending, error} = useRegister();
 
     const handleSubmit = (e) => {
@@ -18,7 +18,9 @@ const RegisterForm = () => {
             return;
         }
 
-        mutate({email, password});
+        //هنا باقي البيانات عدلي الفورم ومرريها مال هوم داتا
+
+        mutate({email, password , displayName});
 
         setEmail('');
         setPassword('');
