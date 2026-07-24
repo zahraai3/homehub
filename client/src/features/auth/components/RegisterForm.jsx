@@ -1,6 +1,6 @@
 import {useState} from "react";
 import useRegister from "../hooks/useRegister";
-
+import { useNavigate } from "react-router-dom";
 import styles from './RegisterForm.module.css'
 
 const RegisterForm = () => {
@@ -8,8 +8,13 @@ const RegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [displayName,  setDisplayName] = useState('')
+    const [ homeName , setHomeName ] = useState('')
+    const [createHome, setCreateHome] = useState(true)
+    const [invite , setInvite] = useState('')
 
     const {mutate, isPending, error} = useRegister();
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,14 +23,19 @@ const RegisterForm = () => {
             return;
         }
 
-        //هنا باقي البيانات عدلي الفورم ومرريها مال هوم داتا
 
-        mutate({email, password , displayName});
+        mutate({email, password , displayName , homeName },
+            {
+                onSuccess: () => navigate('/')
+            }
+        );
 
         setEmail('');
         setPassword('');
         setConfirmPassword('');
         setDisplayName('')
+        setHomeName('')
+        setInvite('')
     }
 
     return (
@@ -68,6 +78,51 @@ const RegisterForm = () => {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
+                <div className={styles.creatChoice}>
+                    <label>
+                        <input
+                            type="radio"
+                            value={true}
+                            defaultChecked
+                            onChange={(e) => setCreateHome(true)}
+                        />
+                    Create a Home 
+                    </label>
+                    <label>
+                        <input
+                            type="radio"
+                            onChange={(e) => setCreateHome(false)}
+                        />
+                    Join a Home 
+                    </label>
+                </div>
+                {createHome ? 
+                    <div className={styles.createInputs}>
+                        <h3>Creating a Home</h3>
+                        <input
+                            className={styles.homeName}
+                            name="HomeName"
+                            placeholder="Home Name"
+                            type="text"
+                            required
+                            value={homeName}
+                            onChange={(e) => setHomeName(e.target.value)}
+                        />
+                    </div>
+                    :
+                    <div className={styles.joinInputs}>
+                        <h3>Joining a Home</h3>
+                        <input
+                            className={styles.inviteCode}
+                            name="InviteCode"
+                            placeholder="Enter Invite Code"
+                            type="text"
+                            required
+                            value={invite}
+                            onChange={(e) => setInvite(e.target.value)}
+                        />
+                    </div>
+                }
                 <button type="submit" className={styles['flip-card__btn']} disabled={isPending}>
                     Register
                 </button>

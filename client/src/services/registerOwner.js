@@ -2,7 +2,7 @@ import { createUser } from "./userService";
 import { createHome } from "./homeService";
 import { register } from "./authService";
 
-export function registerOwner(data) {
+export async function registerOwner(data) {
     //1 authintication 
     const userCredential = await register(data.email , data.password);
     const firebaseUser = userCredential.user;
