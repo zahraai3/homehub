@@ -133,3 +133,16 @@
 .inviteCode:focus {
   border: 2px solid var(--border-strong);
 }
+
+.error {
+  border: 2px solid red !important;
+}
+
+.error-message {
+  color: rgb(237, 103, 103);
+  font-size: 13px;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-left: 12.5%;
+  font-family: 'Courier New', Courier, monospace;
+}
