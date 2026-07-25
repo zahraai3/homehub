@@ -7,14 +7,16 @@ import SettingPage from './features/settings/SettingPage'
 import TasksPage from './features/tasks/TasksPage'
 import ShoppingListPage from './features/shoppingList/ShoppingListPage'
 import ExpensesPage from './features/expenses/ExpensesPage'
-import RegisterForm from './features/auth/components/RegisterForm'
-
+import { RegisterPage } from "./features/auth/RegisterPage"
 import ProtectedRoute from "./shared/components/ProtectedRoute"
+import GuestRoute from "./shared/components/GuestRoute"
 
 const App = () => {
   return(
       <Routes>
-        <Route path="register" element={<RegisterForm/>} />
+        <Route element={<GuestRoute/>}>
+          <Route path="register" element={<RegisterPage/>} />
+        </Route>
         <Route element={<ProtectedRoute/>}>
           <Route element={<MainLayout/>}>
             <Route index element={<DashboardPage/>} />
