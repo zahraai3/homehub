@@ -5,7 +5,8 @@ function Card({
   deadline = '07/12/2026',
   bills = [
     { id: 'water', label: 'water bill', amount: 25, payable: true },
-    { id: 'wifi', label: 'wifi', amount: 10, payable: false },
+    {id: 'idk', label:'idk' , amount:30,payable:true},
+    { id: 'wifi', label: 'wifi', amount: 10, payable: true },
     { id: 'rent', label: 'rent', amount: 100, payable: false },
   ],
   onPay,
