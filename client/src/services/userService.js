@@ -11,3 +11,15 @@ export async function createUser(user) {
     })
 }
 
+export async function getUser(userId) {
+    const userRef = doc(db, "users" , userId)
+    const userSnap = await getDoc(userRef)
+
+    if(!userSnap.exists()){
+        throw new Error("USUERRE NOOTT FOUUNNDD")
+    }
+
+    return{
+        ...userSnap.data()
+    }
+}

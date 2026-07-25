@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+.ppc-card {
+  width: 340px;
+  background: #ffffff;
+  border: 3px solid #000000;
+  padding: 18px 22px;
+  box-shadow: 6px 6px 0 #000000;
+  font-family: 'VT323', monospace;
+}
+
+.ppc-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.ppc-divider {
+  border: none;
+  border-top: 2px dashed #000000;
+  margin: 10px 0;
+}
+
+.ppc-deadline {
+  font-size: 20px;
+  color: #000000;
+  margin: 0 0 6px 0;
+}
+
+.ppc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  color: #000000;
+  padding: 4px 0;
+}
+
+.ppc-label {
+  display: flex;
+  gap: 10px;
+}
+
+.ppc-pay-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0 #000000;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.ppc-pay-btn:active {
+  box-shadow: 0px 0px 0 #000000;
+  transform: translate(3px, 3px);
+}
+
+.ppc-row--paid .ppc-pay-btn {
+  background: #000000;
+  color: #ffffff;
+}
+
+.ppc-row--paid .ppc-label {
+  text-decoration: line-through;
+}
