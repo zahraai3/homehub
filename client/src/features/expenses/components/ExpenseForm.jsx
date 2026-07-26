@@ -3,6 +3,7 @@ import { validateExpenseForm } from "../utils/expenseValidator";
 import useExpense from "../hooks/useExpense";
 import { useUserData } from "../../auth/hooks/useUserData";
 import { useMembers } from "../../members/hooks/useMembers";
+import { useAuth } from "../../auth/context/authContext";
 import styles from '../components/ExpenseForm.module.css'
 
 const ExpenseForm = () => {
@@ -11,12 +12,14 @@ const ExpenseForm = () => {
     const [deadline, setdeadline] = useState("");
     const [errors, setErrors] = useState({});
 
+    const {user} = useAuth()
+
     const {mutate , isPending , error} = useExpense();
 
-    const {users} = useMembers()
-    const {user} = useUserData()
-    const userId = user?.id
-    const homeId = user?.homeId
+    const {data: users} = useMembers(user.uid)
+    const {data : userData} = useUserData(user.uid)
+    const userId = userData?.id
+    const homeId = userData?.homeId
 
     const handleSubmit = (e) => {
         e.preventDefault();
