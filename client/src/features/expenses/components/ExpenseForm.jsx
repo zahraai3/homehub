@@ -64,52 +64,67 @@ const ExpenseForm = () => {
 
     return(
         <form className={styles['flip-card__form']} onSubmit={handleSubmit}>
-            <input
-                className={`${styles['flip-card__input']} ${errors.expenseTitle ? styles.error : ""}`}
-                name="expenseTitle"
-                placeholder="expenseTitle"
-                type="text"
-                value={expenseTitle}
-                onChange={(e) => { 
-                    setexpenseTitle(e.target.value)
-                    clearFieldError('expenseTitle')
-                } }
-            />
-            {errors.expenseTitle && (
-                <span className={styles['error-message']}>
-                    {errors.expenseTitle}
-                </span>
-            )}
-            <input
-                className={`${styles['flip-card__input']} ${errors.totalAmount ? styles.error : ""}`}
-                name="totalAmount"
-                placeholder="totalAmount"
-                type="number"
-                value={totalAmount}
-                onChange={(e) => {settotalAmount(e.target.value)
-                    clearFieldError('totalAmount')
-                }}
-            />
-            {errors.totalAmount && (
-                <span className={styles['error-message']}>
-                    {errors.totalAmount}
-                </span>
-            )}
-            <input
-                className={`${styles['flip-card__input']} ${errors.deadline ? styles.error : ""}`}
-                name="deadline"
-                placeholder="Deadline At"
-                type="date"
-                value={deadline}
-                onChange={(e) => {setdeadline(e.target.value)
-                    clearFieldError('deadline')
-                }}
-            />
-            {errors.deadline && (
-                <span className={styles['error-message']}>
-                    {errors.deadline}
-                </span>
-            )}
+            <h2 className={styles['flip-card__title']}>Add Expense</h2>
+
+            <div className={styles['flip-card__group']}>
+                <label className={styles['flip-card__label']} htmlFor="expenseTitle">Expense Title</label>
+                <input
+                    id="expenseTitle"
+                    className={`${styles['flip-card__input']} ${errors.expenseTitle ? styles.error : ""}`}
+                    name="expenseTitle"
+                    placeholder="e.g. Electricity Bill"
+                    type="text"
+                    value={expenseTitle}
+                    onChange={(e) => { 
+                        setexpenseTitle(e.target.value)
+                        clearFieldError('expenseTitle')
+                    } }
+                />
+                {errors.expenseTitle && (
+                    <span className={styles['error-message']}>
+                        {errors.expenseTitle}
+                    </span>
+                )}
+            </div>
+
+            <div className={styles['flip-card__group']}>
+                <label className={styles['flip-card__label']} htmlFor="totalAmount">Total Amount</label>
+                <input
+                    id="totalAmount"
+                    className={`${styles['flip-card__input']} ${errors.totalAmount ? styles.error : ""}`}
+                    name="totalAmount"
+                    placeholder="0.00"
+                    type="number"
+                    value={totalAmount}
+                    onChange={(e) => {settotalAmount(e.target.value)
+                        clearFieldError('totalAmount')
+                    }}
+                />
+                {errors.totalAmount && (
+                    <span className={styles['error-message']}>
+                        {errors.totalAmount}
+                    </span>
+                )}
+            </div>
+
+            <div className={styles['flip-card__group']}>
+                <label className={styles['flip-card__label']} htmlFor="deadline">Deadline</label>
+                <input
+                    id="deadline"
+                    className={`${styles['flip-card__input']} ${errors.deadline ? styles.error : ""}`}
+                    name="deadline"
+                    type="date"
+                    value={deadline}
+                    onChange={(e) => {setdeadline(e.target.value)
+                        clearFieldError('deadline')
+                    }}
+                />
+                {errors.deadline && (
+                    <span className={styles['error-message']}>
+                        {errors.deadline}
+                    </span>
+                )}
+            </div>
             
             <button type="submit" className={styles['flip-card__btn']} disabled={isPending}>
                 Save Expense

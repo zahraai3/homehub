@@ -4,14 +4,16 @@
     align-items: center;
     gap: 1rem;
 
-    border:var(--border-blck) 3px solid;
+    border: var(--border-blck) 3px solid;
     border-radius: 0.5rem;
+    background-color: var(--bg-elevated);
 
     height: 65px;
     position: fixed;
     bottom: 1rem;
     left: 1rem;
     right: 1rem;
+    z-index: 100;
 }
 .link{
     color: var(--text-blck);

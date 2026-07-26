@@ -7,7 +7,7 @@ const ExpensesPage = () => {
         <div className={styles.container}>
             <ExpenseHeader/>
             <div className={styles.info}>
-                <div >
+                <div className={styles.expensesList}>
                 <h1>Name // deadline</h1>
                 <h3>total</h3>
                 <h3>my share</h3>
@@ -15,7 +15,7 @@ const ExpensesPage = () => {
                 <h3>paid by:</h3>
                 <h3>bending</h3>
             </div>
-            <div>
+            <div className={styles.formSection}>
                 <ExpenseForm/>
             </div>
             </div>

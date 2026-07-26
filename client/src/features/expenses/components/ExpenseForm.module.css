@@ -2,10 +2,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  gap: 16px;
 }
+
+.flip-card__title{
+  font-family: var(--font-one);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.flip-card__group{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.flip-card__label{
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-left: 2px;
+}
+
 .flip-card__input {
-  width: 75%;
+  width: 100%;
   height: 50px;
   border-radius: 5px;
   border: 2px solid var(--border-blck);
@@ -26,7 +51,7 @@
 }
 
 .flip-card__btn {
-  margin: 20px 0 20px 0;
+  margin: 12px 0 0 0;
   width: 150px;
   height: 50px;
   border-radius: 5px;
@@ -51,7 +76,5 @@
   color: rgb(237, 103, 103);
   font-size: 13px;
   font-weight: 700;
-  align-self: flex-start;
-  margin-left: 12.5%;
   font-family: 'Courier New', Courier, monospace;
 }
