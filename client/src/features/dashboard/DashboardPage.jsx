@@ -1,6 +1,6 @@
 import {useAuth} from '../auth/context/authContext';
-import { useHome } from './hooks/useHome';
-import { useUserData } from './hooks/useUserData';
+import { useHome } from '../auth/hooks/useHome';
+import { useUserData } from '../auth/hooks/useUserData';
 import styles from './DashboardPage.module.css';
 import {Icon} from "@iconify/react";
 

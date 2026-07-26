@@ -1,4 +1,4 @@
-import { getUser } from "../../../services/userService";
+import { getUser } from "../services/userService";
 import { useQuery } from "@tanstack/react-query";
 
 export function useUserData(userId){

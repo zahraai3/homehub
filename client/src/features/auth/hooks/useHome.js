@@ -1,4 +1,4 @@
-import { getHome } from "../../../services/homeService";
+import { getHome } from '../services/homeService'
 import {useQuery} from '@tanstack/react-query'
 
 export function useHome(userId){

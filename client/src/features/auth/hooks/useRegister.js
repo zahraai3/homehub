@@ -1,5 +1,5 @@
 import {useMutation} from "@tanstack/react-query";
-import { registerOwner } from "../../../services/registerOwner";
+import { registerOwner } from "../services/registerOwner";
 import { Navigate } from "react-router-dom";
 
 

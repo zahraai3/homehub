@@ -1,7 +1,7 @@
 import {doc,collection, addDoc,getDoc,updateDoc,serverTimestamp, query, where, getDocs} from 'firebase/firestore'
-import { db } from '../lib/firebase'
+import { db } from '../../../lib/firebase'
 
-import generateInviteCode from '../shared/utils/generateInviteCode'
+import generateInviteCode from '../../../shared/utils/generateInviteCode'
 
 export async function createHome(home) {
 
