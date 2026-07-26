@@ -1,5 +1,5 @@
 import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection} from 'firebase/firestore'
-import { db } from '../lib/firebase'
+import { db } from '../../../lib/firebase'
 
 export async function createExpens({expense , homeId , users}) {
     const expenseDocRef = await addDoc(collection(db , 'expenses'),{

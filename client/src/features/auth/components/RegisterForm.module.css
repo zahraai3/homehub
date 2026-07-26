@@ -25,6 +25,7 @@
   color: var(--text-on-primary);
 }
 
+
 .flip-card__input {
   width: 75%;
   height: 50px;
@@ -45,6 +46,7 @@
 .flip-card__input:focus {
   border: 2px solid var(--border-strong);
 }
+
 
 .flip-card__btn {
   margin: 20px 0 20px 0;
@@ -133,6 +135,7 @@
 .inviteCode:focus {
   border: 2px solid var(--border-strong);
 }
+
 
 .error {
   border: 2px solid red !important;

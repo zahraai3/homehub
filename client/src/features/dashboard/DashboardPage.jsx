@@ -6,13 +6,34 @@ import {Icon} from "@iconify/react";
 
 import Card from './components/Card';
 import { data } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
     const { user} = useAuth();
     const { data: home, isPending, error } = useHome(user.uid)
     const {data:userData } = useUserData(user.uid)
 
-    const things = ['expense' , 'shopping List' , 'tasks' ]
+    const navigate = useNavigate();
+
+    const getExpense = () => {
+        console.log('Expensee');
+        navigate('expenses')
+    }
+
+    const getList = () => {
+        console.log('lissttt');
+        navigate('shoppinglist')
+    }
+
+    const gettask = () => {
+        console.log('taskkkk');
+        navigate('tasks')
+    }
+
+    const things = [{ name: 'expense' , func:getExpense}
+        ,{ name: 'list' , func:getList},
+        { name: 'task' , func:gettask},
+    ]
     
     return(
         <div className={styles.container}>
@@ -29,7 +50,7 @@ const DashboardPage = () => {
 
             <div className={styles.cardContainer}>
                 {things.map(i => {
-                    return <Card key={i} cardName = {i}/>
+                    return <Card key={i.name} cardName = {i}/>
                 })}
             </div>
             <div className={styles.recentCard}>

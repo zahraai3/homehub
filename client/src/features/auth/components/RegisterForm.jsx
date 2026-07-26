@@ -2,7 +2,7 @@ import {useState} from "react";
 import useRegister from "../hooks/useRegister";
 import { useNavigate } from "react-router-dom";
 import styles from './RegisterForm.module.css';
-import { validateRegisterForm } from "../../../shared/validators/registerValidator";
+import { validateRegisterForm } from "../utils/registerValidator";
 
 const RegisterForm = () => {
     const [email, setEmail] = useState('');

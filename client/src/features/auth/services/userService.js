@@ -20,6 +20,7 @@ export async function getUser(userId) {
     }
 
     return{
+        id:userId,
         ...userSnap.data()
     }
 }
