@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 .ppc-card {
-  width: 340px;
+  min-width: 340px;
+  max-width: 380px;
   background: #ffffff;
   border: 3px solid #000000;
   padding: 18px 22px;
@@ -68,4 +69,17 @@
 
 .ppc-row--paid .ppc-label {
   text-decoration: line-through;
+}
+
+.emptyCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: space-between;
+}
+.emptyData{
+  font-size: 20px;
+  font-weight: 500;
 }

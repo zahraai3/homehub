@@ -17,3 +17,36 @@
     align-items: center;
     gap: 3px;
 }
+
+.cardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px , 350px));
+    gap: 30px;
+    flex: 1;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.recentCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.ppc-divider {
+    border: none;
+    border-top: 2px dashed #000000;
+    margin: 10px 0;
+    width: 100%;
+}
+.recentActiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.recentActiv p{
+    font-size: 25px;
+    font-weight: 500;
+}
