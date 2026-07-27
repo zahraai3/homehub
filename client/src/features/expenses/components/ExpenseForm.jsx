@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { validateExpenseForm } from "../utils/expenseValidator";
-import useExpense from "../hooks/useExpense";
+import {useAddExpense} from "../hooks/useExpense";
 import { useUserData } from "../../auth/hooks/useUserData";
 import { useMembers } from "../../members/hooks/useMembers";
 import { useAuth } from "../../auth/context/authContext";
@@ -14,7 +14,7 @@ const ExpenseForm = () => {
 
     const {user} = useAuth()
 
-    const {mutate , isPending , error} = useExpense();
+    const {mutate , isPending , error} = useAddExpense();
 
     const {data: users} = useMembers(user.uid)
     const {data : userData} = useUserData(user.uid)

@@ -1,9 +1,9 @@
 import {useMutation} from "@tanstack/react-query";
-import { createExpens } from "../services/expensesService";
+import { createExpens, getAllExpenses } from "../services/expensesService";
 import { Navigate } from "react-router-dom";
-import { useQueryClient } from "@tanstack/react-query";
+import { useQueryClient , useQuery } from "@tanstack/react-query";
 
-const useExpense = () => {
+const useAddExpense = () => {
     const queryclient = useQueryClient()
 
     return useMutation({
@@ -19,4 +19,12 @@ const useExpense = () => {
     })
 }
 
-export default useExpense;
+const useAllExpense = (homeId) => {
+    return useQuery({
+        queryKey:['expenses',homeId],
+        queryFn: () => getAllExpenses(homeId),
+        enabled:!!homeId
+    })
+}
+
+export {useAddExpense , useAllExpense};
