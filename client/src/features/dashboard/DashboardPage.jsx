@@ -45,7 +45,7 @@ const DashboardPage = () => {
                     />
                     <h1>Dashboard</h1>
                 </div>
-                <h2>Hello Dear {userData?.displayName}</h2>
+                <h2></h2>
             </div>
 
             <div className={styles.cardContainer}>

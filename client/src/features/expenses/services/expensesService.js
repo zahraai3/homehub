@@ -1,4 +1,4 @@
-import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection} from 'firebase/firestore'
+import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection, query, where, getDocs} from 'firebase/firestore'
 import { db } from '../../../lib/firebase'
 
 export async function createExpens({expense , homeId , users}) {
@@ -25,3 +25,21 @@ export async function createExpens({expense , homeId , users}) {
     }
 }
 
+export async function getAllExpenses(homeId) {
+    
+    const q = query(
+        collection(db , 'expenses'),
+        where("homeId", "==", homeId)
+    )
+
+    const allExpenseSnaps = await getDocs(q)
+
+    if(allExpenseSnaps.empty){
+        return [];
+    }
+
+    return allExpenseSnaps.docs.map(doc => ({
+        id:doc.id,
+        ...doc.data()
+    }))
+}
