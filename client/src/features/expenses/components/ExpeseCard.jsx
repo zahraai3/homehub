@@ -2,13 +2,13 @@ import * as React from 'react';
 import styles from './ExpenseCard.module.css';
 
 export default function ExpenseCard({
-  title = 'Rent',
-  totalAmount = '500',
-  share = '100',
-  collected = '200',
-  memberPaid = ['Sarah', 'Zoey'],
-  pendingPayMember = ['Mustafa'],
-  duaDate = '1/1/2005',
+  title,
+  totalAmount ,
+  share,
+  collected ,
+  memberPaid ,
+  pendingPayMember ,
+  duaDate,
 }) {
   return (
     <div className={styles.card}>

@@ -12,7 +12,7 @@ export function ExpenseHeader(){
                 icon='arcticons:expense-register'
                 width={30}
                 />
-                <h1>Dashboard</h1>
+                <h1>Expenses</h1>
             </div>
             <h2></h2>
         </div>
