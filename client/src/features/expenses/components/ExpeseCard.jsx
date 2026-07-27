@@ -21,7 +21,7 @@ export default function ExpenseCard({
     <TableContainer component={Paper} sx={{ maxWidth: 400 }}>
       <Table size="small">
         <TableBody>
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -42,7 +42,7 @@ export default function ExpenseCard({
               </TableCell>
             </TableRow>
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -64,7 +64,7 @@ export default function ExpenseCard({
               </TableCell>
             </TableRow>
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -86,7 +86,7 @@ export default function ExpenseCard({
               </TableCell>
             </TableRow>
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -108,7 +108,7 @@ export default function ExpenseCard({
               </TableCell>
             </TableRow>
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -126,12 +126,12 @@ export default function ExpenseCard({
                   py: 1.5,
                 }}
               >
-                {collected}
+                {collected} $
               </TableCell>
             </TableRow>
             
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -149,11 +149,17 @@ export default function ExpenseCard({
                   py: 1.5,
                 }}
               >
-                {memberPaid}
+                {
+                  memberPaid.length > 0
+                    ? memberPaid.map((name) => (
+                        <p key={name}>{name}</p>
+                      ))
+                    : 'No one has paid yet.'
+                }
               </TableCell>
             </TableRow>
 
-            <TableRow key={title}>
+            <TableRow >
               <TableCell
                 sx={{
                   fontWeight: 500,
@@ -171,7 +177,13 @@ export default function ExpenseCard({
                   py: 1.5,
                 }}
               >
-                {pendingPayMember}
+                {
+                  pendingPayMember.length > 0
+                    ? pendingPayMember.map((name) => (
+                        <p key={name}>{name}</p>
+                      ))
+                    : 'fully paid.'
+                }
               </TableCell>
             </TableRow>
         </TableBody>
