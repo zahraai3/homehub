@@ -10,15 +10,17 @@ import { useMembers } from "../members/hooks/useMembers"
 import getPaidMembers from "./utils/getPaidMembers"
 import getPendingMembers from "./utils/getPendingMembers"
 
+
+
 const ExpensesPage = () => {
     const {user} = useAuth();
     const {data : userData} = useUserData(user?.uid)
-    const {data: members} = useMembers(user?.uid)
+    const {data: members ,isPending: membersPending} = useMembers(user?.uid)
     
     const {data : expenses , isPending , error} = useAllExpense(userData?.homeId) 
 
 
-    if (isPending || !userData) return <p>Loading...</p>;
+    if (isPending || !userData || membersPending) return <p>Loading...</p>;
     if (error) return <p>Something went wrong.</p>;
 
 

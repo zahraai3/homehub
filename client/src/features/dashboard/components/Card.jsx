@@ -4,6 +4,8 @@ import { useMyUnpaidExpenses } from '../../expenses/hooks/useMyExpense';
 import { useAuth } from '../../auth/context/authContext';
 import { useUserData } from '../../auth/hooks/useUserData';
 
+import { useMarkExpenseAsPaid } from '../../expenses/hooks/useMarkExpenseAsPAid';
+
 function Card({ cardName }) {
 
   const [payBtn , setPayBtn] = useState('Pay')
@@ -20,12 +22,14 @@ function Card({ cardName }) {
     );
 
     return participant?.share ?? 0;
-}
+  }
 
-  const handlePay = () => {
-    //idk yet about lojic w firebase 
-    setPayBtn('Paid')
+  const { mutate , error:isPayError , isPending: isPayPending} = useMarkExpenseAsPaid()
+
+  const handlePay = (expenseId , userId) => {
     console.log('PAYYYYY');
+
+    mutate({expenseId , userId})
     
   }
 
@@ -47,19 +51,18 @@ if (error) {
         :(
           unpaidExpenses.map((expense) => {
             return(
-              <div key={expense.id} className={`${styles['ppc-row']} ${payBtn == 'Paid' ? ` ${styles['ppc-row--paid']}` : ''}`}>
+              <div key={expense.id} className={`${styles['ppc-row']}`}>
                 <span className={styles['ppc-label']}>
                   {expense.title} - {myShare(expense)}$
                 </span>
-                {payBtn == 'Pay' && (
-                  <button 
-                    type="button"
-                    className={styles['ppc-pay-btn']}
-                    onClick={() => handlePay()}
-                    >
-                      {payBtn}
-                    </button>
-                )}
+                  <button
+                      type="button"
+                      className={styles["ppc-pay-btn"]}
+                      onClick={() => handlePay(expense.id , user?.uid)}
+                      disabled={isPayPending}
+                  >
+                      {isPayPending ? "Paying..." : "Pay"}
+                  </button>
               </div>
             )
           }))
