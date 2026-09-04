@@ -18,6 +18,8 @@ const ShoppingListPage = () => {
     if (isPending || !userData || membersPending) return <p>Loading...</p>;
     if (error) return <p>Something went wrong.</p>;
 
+
+
     return (
         <div className={styles.container}>
             <ShoppingHeader/>
@@ -25,12 +27,14 @@ const ShoppingListPage = () => {
                 {shoppingItems.map((item) => (
                     <ShoppingItemCard
                         key={item.id}
+                        id={item.id}
                         name={item.name}
                         quantity={item.quantity}
                         important={item.important}
                         assignedToName={getMemberName(item.assignedTo, members)}
                         completed={item.completed}
                         completedByName={getMemberName(item.completedBy, members)}
+                        userId={userData?.id}
                     />
                 ))}
             </div>

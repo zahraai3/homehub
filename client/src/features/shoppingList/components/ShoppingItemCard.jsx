@@ -1,14 +1,31 @@
 import * as React from 'react';
 import styles from './ShoppingItemCard.module.css';
+import { useMarkShoppingItemChecked } from "../hooks/useMarkShoppingItemChecked";
 
 export default function ShoppingItemCard({
+  id,
   name,
   quantity,
   important,
   assignedToName,
   completed,
   completedByName,
+  userId,
 }) {
+  const { mutate, isPending } = useMarkShoppingItemChecked();
+
+  const handleCheck = () => {
+    if (completed) return; 
+
+    mutate({
+      itemId: id,
+      userID: userId,
+    });
+  };
+
+  
+
+  
   return (
     <div className={styles.card}>
       <table className={styles.table}>
@@ -34,7 +51,16 @@ export default function ShoppingItemCard({
           <tr className={styles.row}>
             <td className={styles.labelCell}>Status :</td>
             <td className={styles.valueCell}>
-              {completed ? 'Completed' : 'Pending'}
+              <label className={styles.checkLabel}>
+                <input
+                  type="checkbox"
+                  className={styles.checkbox}
+                  checked={completed}
+                  disabled={isPending || completed}
+                  onChange={handleCheck}
+                />
+                {completed ? 'Completed' : 'Pending'}
+              </label>
             </td>
           </tr>
 
