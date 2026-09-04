@@ -78,3 +78,35 @@
   font-weight: 700;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.flip-card__checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.flip-card__checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 3px 4px var(--border-blck);
+  cursor: pointer;
+  accent-color: var(--border-strong);
+  flex-shrink: 0;
+}
+
+.flip-card__checkbox:active {
+  box-shadow: 0px 0px var(--border-strong);
+  transform: translate(2px, 2px);
+}
+
+.flip-card__checkbox-label {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}

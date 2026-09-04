@@ -128,15 +128,16 @@ const ShoppingItemForm = () => {
                 </select>
             </div>
 
-            <div className={styles['flip-card__group']} style={{ flexDirection: 'row', alignItems: 'center', gap: '8px' }}>
+            <div className={styles['flip-card__checkbox-group']}>
                 <input
                     id="important"
                     name="important"
                     type="checkbox"
+                    className={styles['flip-card__checkbox']}
                     checked={important}
                     onChange={(e) => setImportant(e.target.checked)}
                 />
-                <label className={styles['flip-card__label']} htmlFor="important">Important</label>
+                <label className={styles['flip-card__checkbox-label']} htmlFor="important">Important</label>
             </div>
 
             <button type="submit" className={styles['flip-card__btn']} disabled={isPending}>

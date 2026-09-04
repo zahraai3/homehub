@@ -1,0 +1,57 @@
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px dashed var(--border-blck);
+  background-color: var(--bg-elevated);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.row {
+  border-bottom: 1px solid var(--border-blck);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.titleRow {
+  background-color: var(--bg-elevated);
+}
+
+.titleCell {
+  font-family: var(--font-one);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 5px 16px;
+}
+
+.labelCell {
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 45%;
+  padding: 5px 16px;
+  font-size: 18px;
+}
+
+.valueCell {
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 5px 16px;
+  text-align: right;
+  font-size: 18px;
+}
+.valueCell p{
+  font-size: 20px;
+}
+.nameLine {
+  margin: 0;
+}
