@@ -1,5 +1,7 @@
+import ShoppingItemForm from "./components/ShoppingItemForm"
+
 const ShoppingListPage = () => {
-    return <h1>ShoppingList Page</h1>
+    return <ShoppingItemForm/>
 }
 
 export default ShoppingListPage
