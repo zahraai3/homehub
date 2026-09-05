@@ -6,7 +6,7 @@ import { useAllShoppingItem } from "./hooks/useShoppingItem"
 import { useAuth } from "../auth/context/authContext"
 import { useUserData } from "../auth/hooks/useUserData"
 import { useMembers } from "../members/hooks/useMembers"
-import { getMemberName } from "./utils/getMemberName"
+import { getMemberName } from "../members/utils/getMemberName"
 
 const ShoppingListPage = () => {
     const { user } = useAuth();

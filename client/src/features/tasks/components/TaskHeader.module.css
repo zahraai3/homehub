@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-bottom: 2px solid var(--danger-border);
+}
+.pageName{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}

@@ -1,0 +1,112 @@
+.flip-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.flip-card__title{
+  font-family: var(--font-one);
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.flip-card__group{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.flip-card__label{
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-left: 2px;
+}
+
+.flip-card__input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 4px 6px var(--border-blck);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 5px 10px;
+  outline: none;
+}
+.flip-card__input::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.8;
+}
+.flip-card__input:focus {
+  border: 2px solid var(--border-strong);
+}
+
+.flip-card__btn {
+  margin: 12px 0 0 0;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 4px 6px var(--border-blck);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.flip-card__btn:active {
+  box-shadow: 0px 0px var(--border-strong);
+  transform: translate(3px, 3px);
+}
+
+.error {
+  border: 2px solid red !important;
+}
+
+.error-message {
+  color: rgb(237, 103, 103);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.flip-card__checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.flip-card__checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid var(--border-blck);
+  background-color: var(--bg-elevated);
+  box-shadow: 3px 4px var(--border-blck);
+  cursor: pointer;
+  accent-color: var(--border-strong);
+  flex-shrink: 0;
+}
+
+.flip-card__checkbox:active {
+  box-shadow: 0px 0px var(--border-strong);
+  transform: translate(2px, 2px);
+}
+
+.flip-card__checkbox-label {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
