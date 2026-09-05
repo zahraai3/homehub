@@ -1,4 +1,4 @@
-import { doc , setDoc, getDoc, updateDoc, serverTimestamp, addDoc, collection, query, where, getDocs } from 'firebase/firestore'
+import { serverTimestamp, addDoc, collection, query, where, getDocs } from 'firebase/firestore'
 import {db} from '../../../lib/firebase'
 
 export async function createShoppingListItem({shoppingList , homeId}){
