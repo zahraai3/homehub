@@ -1,0 +1,18 @@
+.heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action {
+  display: block;
+  background: none;
+  border: none;
+  color: #4a4a4a;
+  text-align: left;
+  padding: 4px 0;
+  cursor: pointer;
+}

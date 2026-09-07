@@ -1,0 +1,21 @@
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.subheading {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.3em;
+}
+
+.option {
+  display: block;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
