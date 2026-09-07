@@ -16,7 +16,7 @@
     z-index: 100;
 }
 .link{
-    color: var(--text-blck);
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 600;

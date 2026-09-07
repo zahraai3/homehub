@@ -2,6 +2,7 @@
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 1.3em;
+  color: var(--text-primary)
 }
 
 .option {
@@ -9,4 +10,5 @@
   margin-bottom: 6px;
   cursor: pointer;
   font-size: 1.3em;
+  color: var(--text-primary)
 }

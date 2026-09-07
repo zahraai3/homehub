@@ -37,7 +37,7 @@
 }
 .ppc-divider {
     border: none;
-    border-top: 2px dashed #000000;
+    border-top: 2px dashed var();
     margin: 10px 0;
     width: 100%;
 }

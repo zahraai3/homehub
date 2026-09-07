@@ -3,10 +3,10 @@
 .ppc-card {
   min-width: 340px;
   max-width: 380px;
-  background: #ffffff;
-  border: 3px solid #000000;
+  background: var(--bg-secondary);
+  border: 3px solid var(--border-blck);
   padding: 18px 22px;
-  box-shadow: 6px 6px 0 #000000;
+  box-shadow: 6px 6px 0 var(--border-blck);
   font-family: 'VT323', monospace;
 }
 
@@ -14,20 +14,20 @@
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #000000;
+  color: var(--border-blck);
   text-transform: uppercase;
   margin: 0 0 10px 0;
 }
 
 .ppc-divider {
   border: none;
-  border-top: 2px dashed #000000;
+  border-top: 2px dashed var(--border-blck);
   margin: 10px 0;
 }
 
 .ppc-deadline {
   font-size: 20px;
-  color: #000000;
+  color: var(--border-blck);
   margin: 0 0 6px 0;
 }
 
@@ -36,7 +36,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
-  color: #000000;
+  color: var(--border-blck)0;
   padding: 4px 0;
 }
 
@@ -48,23 +48,23 @@
 .ppc-pay-btn {
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
-  background: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
-  box-shadow: 3px 3px 0 #000000;
+  background: var(--bg-secondary);
+  color: var(--border-blck);
+  border: 2px solid var(--border-blck);
+  box-shadow: 3px 3px 0 var(--border-blck);
   padding: 6px 12px;
   cursor: pointer;
   text-transform: uppercase;
 }
 
 .ppc-pay-btn:active {
-  box-shadow: 0px 0px 0 #000000;
+  box-shadow: 0px 0px 0 var(--border-blck);
   transform: translate(3px, 3px);
 }
 
 .ppc-row--paid .ppc-pay-btn {
-  background: #000000;
-  color: #ffffff;
+  background: var(--border-blck);
+  color: var(--bg-secondary);
 }
 
 .ppc-row--paid .ppc-label {

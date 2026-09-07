@@ -7,16 +7,17 @@
 }
 
 .title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 900;
   margin-bottom: 20px;
+  color: var(--text-primary)
 }
 
 .card {
   width: 100%;
   box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
+  background: var(--gray-100);
+  border: 1px solid var(--bg-subtle);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   padding: 20px;
@@ -38,7 +39,7 @@
 
 .divider {
   border: none;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid var(--gray-400);
   margin: 0;
 }
 

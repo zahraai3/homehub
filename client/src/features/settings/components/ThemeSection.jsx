@@ -1,10 +1,10 @@
+import { useTheme } from '../../../theme/context/themeContext';
 import { useState } from 'react';
 import styles from './ThemeSection.module.css';
 
-// TODO(step 3): connect this to the app's real theme state
-// (context/provider) instead of local component state.
+
 function ThemeSection() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, setTheme } = useTheme();
 
   return (
     <section>
@@ -14,7 +14,7 @@ function ThemeSection() {
         <input
           type="checkbox"
           checked={isDarkMode}
-          onChange={() => setIsDarkMode(true)}
+          onChange={() => setTheme('dark')}
         />
         Dark mode
       </label>
@@ -23,7 +23,7 @@ function ThemeSection() {
         <input
           type="checkbox"
           checked={!isDarkMode}
-          onChange={() => setIsDarkMode(false)}
+          onChange={() => setTheme('light')}
         />
         Light mode
       </label>
