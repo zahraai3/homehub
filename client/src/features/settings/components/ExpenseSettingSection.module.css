@@ -12,13 +12,15 @@
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 1.3em;
+  font-family:var(--font-one) ;
   color: var(--text-primary)
 }
 
 .option {
-  display: block;
   margin-bottom: 6px;
   cursor: pointer;
   font-size: 1.2em;
-  color: var(--text-primary)
+  color: var(--text-primary);
+  display: flex;
+  gap: 0.5em;
 }

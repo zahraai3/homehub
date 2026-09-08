@@ -9,13 +9,15 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    border-bottom: 2px solid var(--danger-border);
+    border-bottom: 2px solid var(--border-strong);
 }
 
 .pageName{
     display: flex;
     align-items: center;
     gap: 3px;
+    color: var(--text-primary)
+
 }
 
 .cardContainer{
@@ -26,6 +28,8 @@
     margin-top: 20px;
     margin-bottom: 25px;
     justify-content: center;
+    color: var(--text-primary)
+
 }
 
 .recentCard{
@@ -34,19 +38,27 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: var(--text-primary)
+
 }
 .ppc-divider {
     border: none;
-    border-top: 2px dashed var();
+    border-top: 2px dashed var(--border-strong);
     margin: 10px 0;
     width: 100%;
+    color: var(--text-primary)
+
 }
 .recentActiv{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: var(--text-primary)
+
 }
 .recentActiv p{
     font-size: 25px;
     font-weight: 500;
+    color: var(--text-primary)
+
 }

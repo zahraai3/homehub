@@ -34,3 +34,98 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
+
+/* تابلت */
+@media (max-width: 768px) {
+    .nav{
+        height: 60px;
+        gap: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
+    }
+    .link{
+        font-size: 1.1rem;
+    }
+    .link:hover,
+    .active{
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* زر الهمبرغر - مخفي إلا بالموبايل */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-elevated);
+    border: var(--border-blck) 2px solid;
+    cursor: pointer;
+}
+
+.hamburger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    margin: 0 auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2){
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* موبايل: التحول لسايدبار */
+@media (max-width: 480px) {
+    .hamburger{
+        display: flex;
+    }
+
+    .nav{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 1.6rem;
+
+        top: 0;
+        right: 0;
+        left: auto;
+        bottom: 0;
+        height: 100%;
+        width: 200px;
+
+        border-radius: 0.5rem 0 0 0.5rem;
+        padding: 4rem 1rem 1rem;
+
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav.open{
+        transform: translateX(0);
+    }
+
+    .link{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .link:hover,
+    .active{
+        padding: 0.5rem 1rem;
+    }
+}

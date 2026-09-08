@@ -76,7 +76,7 @@
     --bg-primary:   var(--gray-0);
     --bg-secondary: var(--gray-50);
     --bg-elevated:  var(--gray-100);
-    --bg-subtle:    var(--gray-200);
+    --bg-subtle:    var(--gray-600);
 
     /* ---- Borders ---- */
     --border:        var(--gray-200);

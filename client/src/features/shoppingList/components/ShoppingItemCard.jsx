@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from './ShoppingItemCard.module.css';
 import { useMarkShoppingItemChecked } from "../hooks/useMarkShoppingItemChecked";
+import { Icon } from '@iconify/react';
 
 export default function ShoppingItemCard({
   id,
@@ -30,11 +31,12 @@ export default function ShoppingItemCard({
     <div className={styles.card}>
       <table className={styles.table}>
         <tbody>
-          <tr className={`${styles.row} ${styles.titleRow}`}>
-            <td className={styles.titleCell} colSpan={2}>
-              {name} {important ? '⭐' : ''}
-            </td>
-          </tr>
+        <tr className={`${styles.row} ${styles.titleRow}`}>
+          <td className={styles.titleCell} colSpan={2}>
+            {name}
+            {important ? <Icon icon="ant-design:star-twotone" color="#FFD700" width={25} /> : ''}
+          </td>
+        </tr>
 
           <tr className={styles.row}>
             <td className={styles.labelCell}>Quantity :</td>

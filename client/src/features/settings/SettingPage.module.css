@@ -17,8 +17,7 @@
   width: 100%;
   box-sizing: border-box;
   background: var(--gray-100);
-  border: 1px solid var(--bg-subtle);
-  border-radius: 16px;
+  border: 2px dashed var(--bg-subtle);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   padding: 20px;
 }

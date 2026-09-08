@@ -24,6 +24,7 @@ function SettingsPage() {
 
           {/* Right column */}
           <div className={styles.column}>
+            <hr className={styles.divider} />
             <MembersSection />
             <hr className={styles.divider} />
             <ThemeSection />

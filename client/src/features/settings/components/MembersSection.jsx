@@ -16,7 +16,9 @@ function MembersSection() {
 
     return (
     <section>
-      <h2 className={styles.heading}>Members</h2>
+      <h2 className={styles.heading}>
+        <Icon icon='clarity:users-line' width={24} />
+        Members</h2>
 
       {/* Add member: intentionally left as a placeholder for now.
           It should navigate to a separate "add member" page later —

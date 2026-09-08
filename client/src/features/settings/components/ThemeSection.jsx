@@ -1,6 +1,7 @@
 import { useTheme } from '../../../theme/context/themeContext';
 import { useState } from 'react';
 import styles from './ThemeSection.module.css';
+import { Icon } from '@iconify/react';
 
 
 function ThemeSection() {
@@ -8,7 +9,9 @@ function ThemeSection() {
 
   return (
     <section>
-      <p className={styles.subheading}>Theme</p>
+      <h2 className={styles.subheading}>
+        <Icon icon='arcticons:theme-store' width={25} />
+        Theme</h2>
 
       <label className={styles.option}>
         <input
