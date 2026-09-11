@@ -6,19 +6,13 @@ import { Icon } from '@iconify/react';
 import PendingCardShell from './components/PendingCardShell';
 import PendingExpensesCard from './components/PendingExpensesCard';
 import PendingShoppingListCard from '../shoppingList/components/PendingShoppingListCard';
+import PendingTasksCard from '../tasks/components/PendingTasksCard';
+
 import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
   const { user } = useAuth();
   const { data: home, isPending, error } = useHome(user.uid);
-
-  const navigate = useNavigate();
-
-  const getTask = () => {
-    navigate('tasks');
-  };
-
-  const things = [{ name: 'task', func: getTask }];
 
   return (
     <div className={styles.container}>
@@ -33,9 +27,7 @@ const DashboardPage = () => {
       <div className={styles.cardContainer}>
         <PendingExpensesCard />
         <PendingShoppingListCard />
-        {things.map((i) => (
-          <PendingCardShell key={i.name} cardName={i} />
-        ))}
+        <PendingTasksCard />
       </div>
 
       <div className={styles.recentCard}>
