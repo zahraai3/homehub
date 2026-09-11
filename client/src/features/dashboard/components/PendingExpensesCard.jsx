@@ -1,5 +1,5 @@
 import styles from './Card.module.css';
-import PendingCardShell from './Card';
+import PendingCardShell from './PendingCardShell';
 import { useMyUnpaidExpenses } from '../../expenses/hooks/useMyExpense';
 import { useMarkExpenseAsPaid } from '../../expenses/hooks/useMarkExpenseAsPAid';
 import { useAuth } from '../../auth/context/authContext';

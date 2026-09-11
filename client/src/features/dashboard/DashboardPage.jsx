@@ -3,8 +3,9 @@ import { useHome } from '../auth/hooks/useHome';
 import styles from './DashboardPage.module.css';
 import { Icon } from '@iconify/react';
 
-import Card from './components/Card';
-import PendingExpensesCard from './components/PendingExpenseCard';
+import PendingCardShell from './components/PendingCardShell';
+import PendingExpensesCard from './components/PendingExpensesCard';
+import PendingShoppingListCard from '../shoppingList/components/PendingShoppingListCard';
 import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
@@ -13,18 +14,11 @@ const DashboardPage = () => {
 
   const navigate = useNavigate();
 
-  const getList = () => {
-    navigate('shoppinglist');
-  };
-
   const getTask = () => {
     navigate('tasks');
   };
 
-  const things = [
-    { name: 'list', func: getList },
-    { name: 'task', func: getTask },
-  ];
+  const things = [{ name: 'task', func: getTask }];
 
   return (
     <div className={styles.container}>
@@ -38,8 +32,9 @@ const DashboardPage = () => {
 
       <div className={styles.cardContainer}>
         <PendingExpensesCard />
+        <PendingShoppingListCard />
         {things.map((i) => (
-          <Card key={i.name} cardName={i} />
+          <PendingCardShell key={i.name} cardName={i} />
         ))}
       </div>
 
