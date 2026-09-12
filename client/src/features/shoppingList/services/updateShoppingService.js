@@ -1,5 +1,6 @@
 import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection, query, where, getDocs , deleteDoc} from 'firebase/firestore'
 import { db } from '../../../lib/firebase';
+import { logActivity } from '../../dashboard/services/logActivity';
 
 export async function markShoppingItemChecked({itemId , userID}) {
     const shoppingItemRef = doc(db , 'shoppingListItems' , itemId)
@@ -9,11 +10,19 @@ export async function markShoppingItemChecked({itemId , userID}) {
         throw new Error('SHOPPING LIST ITEM NOT FOUND')
     }
 
+    const shoppingItemData = shoppingItemSnap.data()
+
     await updateDoc(shoppingItemRef , {
         completed: true,
         completedBy: userID
     })
 
+    await logActivity({
+        homeId: shoppingItemData.homeId,
+        type: 'item_purchased',
+        performedBy: userID,
+        label: shoppingItemData.name,
+    })
 }
 
 export async function makeShoppingItemImportant(itemId) {

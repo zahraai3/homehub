@@ -1,5 +1,6 @@
 import {doc,getDoc,updateDoc, deleteDoc} from 'firebase/firestore'
 import { db } from '../../../lib/firebase';
+import { logActivity } from '../../dashboard/services/logActivity';
 
 export async function markTaskChecked({itemId , userId}) {
     const taskRef = doc(db , 'tasks' , itemId)
@@ -9,9 +10,18 @@ export async function markTaskChecked({itemId , userId}) {
         throw new Error('TASKK NOT FOUND')
     }
 
+    const taskData = taskSnap.data()
+
     await updateDoc(taskRef , {
         completed : true,
         completedBy : userId
+    })
+
+    await logActivity({
+        homeId: taskData.homeId,
+        type: 'task_completed',
+        performedBy: userId,
+        label: taskData.name,
     })
 }
 

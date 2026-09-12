@@ -1,5 +1,6 @@
 import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection, query, where, getDocs} from 'firebase/firestore'
 import { db } from '../../../lib/firebase';
+import { logActivity } from '../../dashboard/services/logActivity';
 
 export async function markExpenseAsPaid({expenseId , userId}) {
     
@@ -23,5 +24,13 @@ export async function markExpenseAsPaid({expenseId , userId}) {
     expenseUserData.paid = true;
     await updateDoc(expenseRef , {
         participants: expenseData.participants
+    })
+
+    await logActivity({
+        homeId: expenseData.homeId,
+        type: 'expense_paid',
+        performedBy:userId,
+        label:expenseData.title,
+        amount:expenseData.share
     })
 }
