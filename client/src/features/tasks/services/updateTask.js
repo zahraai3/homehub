@@ -17,12 +17,16 @@ export async function markTaskChecked({itemId , userId}) {
         completedBy : userId
     })
 
-    await logActivity({
-        homeId: taskData.homeId,
-        type: 'task_completed',
-        performedBy: userId,
-        label: taskData.name,
-    })
+    try {
+        await logActivity({
+            homeId: taskData.homeId,
+            type: 'task_completed',
+            performedBy: userId,
+            label: taskData.name,
+        })
+    } catch (error) {
+        console.error('FAILED TO LOG ACTIVITY (task_completed):', error)
+    }
 }
 
 export async function markTaskImportant(itemId) {

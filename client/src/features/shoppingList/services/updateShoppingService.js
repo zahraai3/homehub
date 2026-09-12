@@ -17,12 +17,16 @@ export async function markShoppingItemChecked({itemId , userID}) {
         completedBy: userID
     })
 
-    await logActivity({
-        homeId: shoppingItemData.homeId,
-        type: 'item_purchased',
-        performedBy: userID,
-        label: shoppingItemData.name,
-    })
+    try {
+        await logActivity({
+            homeId: shoppingItemData.homeId,
+            type: 'item_purchased',
+            performedBy: userID,
+            label: shoppingItemData.name,
+        })
+    } catch (error) {
+        console.error('FAILED TO LOG ACTIVITY (item_purchased):', error)
+    }
 }
 
 export async function makeShoppingItemImportant(itemId) {

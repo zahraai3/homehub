@@ -26,11 +26,15 @@ export async function markExpenseAsPaid({expenseId , userId}) {
         participants: expenseData.participants
     })
 
-    await logActivity({
-        homeId: expenseData.homeId,
-        type: 'expense_paid',
-        performedBy:userId,
-        label:expenseData.title,
-        amount:expenseData.share
-    })
+    try {
+        await logActivity({
+            homeId: expenseData.homeId,
+            type: 'expense_paid',
+            performedBy: userId,
+            label: expenseData.title,
+            amount: expenseUserData.share,
+        })
+    } catch (error) {
+        console.error('FAILED TO LOG ACTIVITY (expense_paid):', error)
+    }
 }
