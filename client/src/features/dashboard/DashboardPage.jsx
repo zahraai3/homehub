@@ -2,8 +2,6 @@ import { useAuth } from '../auth/context/authContext';
 import { useHome } from '../auth/hooks/useHome';
 import styles from './DashboardPage.module.css';
 import { Icon } from '@iconify/react';
-
-import PendingCardShell from './components/PendingCardShell';
 import PendingExpensesCard from './components/PendingExpensesCard';
 import PendingShoppingListCard from '../shoppingList/components/PendingShoppingListCard';
 import PendingTasksCard from '../tasks/components/PendingTasksCard';
