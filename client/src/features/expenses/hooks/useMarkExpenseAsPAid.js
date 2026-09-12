@@ -19,6 +19,10 @@ const useMarkExpenseAsPaid = () => {
             queryclient.invalidateQueries({
                 queryKey: ["expenses"]
             });
+
+            queryclient.invalidateQueries({
+                queryKey:["activityLog"]
+            })
         }
     })
 }

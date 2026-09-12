@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import PendingExpensesCard from './components/PendingExpensesCard';
 import PendingShoppingListCard from '../shoppingList/components/PendingShoppingListCard';
 import PendingTasksCard from '../tasks/components/PendingTasksCard';
+import RecentActivityCard from './components/RecentActivityCard';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -30,10 +31,7 @@ const DashboardPage = () => {
 
       <div className={styles.recentCard}>
         <hr className={styles['ppc-divider']} />
-        <div className={styles.recentActiv}>
-          <h2>Recent activity : {`( Week ${'first of the week'} - ${'last of the week'})`}</h2>
-          <p>Label name - By Name - paid - date : 00/00/2026</p>
-        </div>
+        <RecentActivityCard />
         <hr className={styles['ppc-divider']} />
       </div>
     </div>

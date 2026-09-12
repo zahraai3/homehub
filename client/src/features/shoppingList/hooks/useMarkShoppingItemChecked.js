@@ -19,6 +19,10 @@ const useMarkShoppingItemChecked = () => {
             queryclient.invalidateQueries({
                 queryKey: ['shoppingListItems']
             })
+
+            queryclient.invalidateQueries({
+                queryKey: ['activityLog']
+            })
         }
     })
 }

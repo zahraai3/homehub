@@ -19,6 +19,10 @@ const useMarkTaskChecked = () => {
             queryclient.invalidateQueries({
                 queryKey: ['tasks']
             })
+
+            queryclient.invalidateQueries({
+                queryKey: ['activityLog']
+            })
         }
     })
 }
