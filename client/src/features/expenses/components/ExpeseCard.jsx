@@ -1,15 +1,26 @@
 import * as React from 'react';
 import styles from './ExpenseCard.module.css';
+import { useMarkExpenseAsPaid } from '../hooks/useMarkExpenseAsPAid';
 
 export default function ExpenseCard({
+  expenseId,
+  userId,
   title,
   totalAmount ,
   share,
+  isPaid,
+  isParticipant,
   collected ,
   memberPaid ,
   pendingPayMember ,
   duaDate,
 }) {
+  const { mutate, isPending: isPayPending } = useMarkExpenseAsPaid();
+
+  const handlePay = () => {
+    mutate({ expenseId, userId });
+  };
+
   return (
     <div className={styles.card}>
       <table className={styles.table}>
@@ -34,6 +45,26 @@ export default function ExpenseCard({
             <td className={styles.labelCell}>My share :</td>
             <td className={styles.valueCell}>{share}$</td>
           </tr>
+
+          {isParticipant && (
+            <tr className={styles.row}>
+              <td className={styles.labelCell}>My status :</td>
+              <td className={styles.valueCell}>
+                {isPaid ? (
+                  <span className={styles.paidText}>Paid</span>
+                ) : (
+                  <button
+                    type="button"
+                    className={styles.payBtn}
+                    onClick={handlePay}
+                    disabled={isPayPending}
+                  >
+                    {isPayPending ? 'Paying...' : 'Pay'}
+                  </button>
+                )}
+              </td>
+            </tr>
+          )}
 
           <tr className={styles.row}>
             <td className={styles.labelCell}>Collected amount :</td>

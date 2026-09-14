@@ -55,3 +55,24 @@
 .nameLine {
   margin: 0;
 }
+
+.payBtn {
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 2px solid var(--border-blck);
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.payBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.paidText {
+  color: #43b148;
+  font-weight: 800;
+  font-size: 1.28em;
+}

@@ -10,8 +10,6 @@ import { useMembers } from "../members/hooks/useMembers"
 import getPaidMembers from "./utils/getPaidMembers"
 import getPendingMembers from "./utils/getPendingMembers"
 
-
-
 const ExpensesPage = () => {
     const {user} = useAuth();
     const {data : userData} = useUserData(user?.uid)
@@ -28,18 +26,28 @@ const ExpensesPage = () => {
         <div className={styles.container}>
             <ExpenseHeader />
             <div className={styles.info}>
-                {expenses.map((expense) => (
-                    <ExpenseCard
-                        key={expense.id} 
-                        title={expense.title}
-                        totalAmount={expense.totalAmount}
-                        share={expense.participants[0].share}
-                        collected={calculateCollected(expense.participants)}
-                        memberPaid={getPaidMembers(expense.participants , members)}
-                        pendingPayMember={getPendingMembers(expense.participants , members)}
-                        duaDate={expense.dueDate}
-                    />
-                ))}
+                {expenses.map((expense) => {
+                    const myParticipant = expense.participants.find(
+                        (p) => p.memberId === user?.uid
+                    );
+
+                    return (
+                        <ExpenseCard
+                            key={expense.id}
+                            expenseId={expense.id}
+                            userId={user?.uid}
+                            title={expense.title}
+                            totalAmount={expense.totalAmount}
+                            share={myParticipant?.share ?? 0}
+                            isPaid={myParticipant?.paid ?? false}
+                            isParticipant={!!myParticipant}
+                            collected={calculateCollected(expense.participants)}
+                            memberPaid={getPaidMembers(expense.participants , members)}
+                            pendingPayMember={getPendingMembers(expense.participants , members)}
+                            duaDate={expense.dueDate}
+                        />
+                    );
+                })}
             </div>
             <div className={styles.formSection}>
                 <ExpenseForm/>
