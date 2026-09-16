@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { createTask, getAllTasks } from "../services/tasksService";
+import { deleteTask } from "../services/updateTask";
 import { useQuery , useQueryClient } from "@tanstack/react-query";
 import { query } from "firebase/firestore";
 
@@ -30,4 +31,22 @@ const useAllTasks = (homeId) => {
     })
 }
 
-export {useAddTask , useAllTasks};  
+const useDeleteTask = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: deleteTask,
+
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ['tasks'],
+            });
+        },
+
+        onError: (error) => {
+            console.error('ERROR DELETING TASK', error);
+        },
+    });
+}
+
+export {useAddTask , useAllTasks , useDeleteTask};  
