@@ -1,6 +1,10 @@
 import * as React from 'react';
 import styles from './ExpenseCard.module.css';
+import { Icon } from '@iconify/react';
+import { useState } from 'react';
 import { useMarkExpenseAsPaid } from '../hooks/useMarkExpenseAsPAid';
+import { useDeleteExpense } from '../hooks/useExpense';
+import ConfirmDialog from '../../../shared/components/ConfirmDialog';
 
 export default function ExpenseCard({
   expenseId,
@@ -16,10 +20,21 @@ export default function ExpenseCard({
   duaDate,
 }) {
   const { mutate, isPending: isPayPending } = useMarkExpenseAsPaid();
+  const { mutate: deleteExpense, isPending: isDeletePending } = useDeleteExpense();
+
+
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+  const isFullyPaid = pendingPayMember.length === 0;
 
   const handlePay = () => {
     mutate({ expenseId, userId });
   };
+
+  const handleDeleteConfirm = () => {
+    deleteExpense(expenseId , {
+      onSuccess: () => setIsConfirmOpen(false,)
+    })
+  }
 
   return (
     <div className={styles.card}>
@@ -27,7 +42,22 @@ export default function ExpenseCard({
         <tbody>
           <tr className={`${styles.row} ${styles.titleRow}`}>
             <td className={styles.titleCell} colSpan={2}>
-              {title} //
+              
+              <div className={styles.titleContent}>
+                <span>{title}</span>
+
+                {isFullyPaid && (
+                  <button
+                    type="button"
+                    className={styles.deleteBtn}
+                    onClick={() => setIsConfirmOpen(true)}
+                    aria-label="Delete expense"
+                  >
+                    <Icon icon="bi:trash" width={20} />
+                  </button>
+                )}
+              </div>
+
             </td>
           </tr>
 
@@ -99,6 +129,16 @@ export default function ExpenseCard({
           </tr>
         </tbody>
       </table>
+
+      <ConfirmDialog
+        isOpen={isConfirmOpen}
+        title="Delete this expense?"
+        message={`"${title}" is fully paid. This action cannot be undone.`}
+        confirmText="Delete"
+        onConfirm={handleDeleteConfirm}
+        onCancel={() => setIsConfirmOpen(false)}
+        isConfirming={isDeletePending}
+      />
     </div>
   );
 }

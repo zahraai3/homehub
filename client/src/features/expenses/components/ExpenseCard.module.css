@@ -34,6 +34,13 @@
   padding: 5px 16px;
 }
 
+.titleContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .labelCell {
   font-weight: 600;
   color: var(--text-primary);
@@ -75,4 +82,19 @@
   color: #43b148;
   font-weight: 800;
   font-size: 1.28em;
+}
+
+.deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #c62828;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: #8e0000;
 }

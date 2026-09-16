@@ -1,4 +1,4 @@
-import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection, query, where, getDocs} from 'firebase/firestore'
+import {doc, setDoc,getDoc,updateDoc,serverTimestamp, addDoc, collection, query, where, getDocs, deleteDoc} from 'firebase/firestore'
 import { db } from '../../../lib/firebase'
 
 export async function createExpens({expense , homeId , users}) {
@@ -42,4 +42,15 @@ export async function getAllExpenses(homeId) {
         id:doc.id,
         ...doc.data()
     }))
+}
+
+export async function deleteExpense(expenseId) {
+    const expenseRef = doc(db , 'expenses' , expenseId)
+    const expenseSnap = await getDoc(expenseRef)
+
+    if(!expenseSnap.exists()){
+        throw new Error('EXPENSEE NOT FOUND')
+    }
+
+    await deleteDoc(expenseRef)
 }

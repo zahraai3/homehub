@@ -1,5 +1,5 @@
 import {useMutation} from "@tanstack/react-query";
-import { createExpens, getAllExpenses } from "../services/expensesService";
+import { createExpens, deleteExpense, getAllExpenses } from "../services/expensesService";
 import { Navigate } from "react-router-dom";
 import { useQueryClient , useQuery } from "@tanstack/react-query";
 
@@ -27,4 +27,23 @@ const useAllExpense = (homeId) => {
     })
 }
 
-export {useAddExpense , useAllExpense};
+const useDeleteExpense = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: deleteExpense,
+
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ['expenses'],
+            });
+        },
+
+        onError: (error) => {
+            console.error('ERROR DELETING EXPENSE', error);
+        },
+    });
+}
+
+export {useAddExpense , useAllExpense , useDeleteExpense};
+
