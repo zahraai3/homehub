@@ -7,7 +7,7 @@ export async function createTask({task, homeId}){
         name: task.name,
         assignedTo:task.assignedTo,
         createdBy:task.createdBy,
-        important:false,
+        important:task.important,
         completedBy: null,
         completed:false,
         createdAt:serverTimestamp()
