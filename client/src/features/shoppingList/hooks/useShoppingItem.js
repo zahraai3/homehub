@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { createShoppingListItem  , getAllShoppingItems} from "../services/shoppingListService";
 import { Navigate } from "react-router-dom";
 import { useQueryClient , useQuery } from "@tanstack/react-query";
+import { deleteShoppingListItem } from "../services/updateShoppingService";
 
 const useAddShoppingItem = () => {
     const queryclient = useQueryClient()
@@ -30,4 +31,22 @@ const useAllShoppingItem = (homeId) => {
     })
 }
 
-export { useAddShoppingItem , useAllShoppingItem }; 
+const useDeleteShoppingItem = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: deleteShoppingListItem,
+
+        onSuccess: () => {
+        queryClient.invalidateQueries({
+            queryKey: ['shoppingListItems'],
+        });
+        },
+
+        onError: (error) => {
+        console.error('ERROR DELETING SHOPPING ITEM', error);
+        },
+    });
+}
+
+export { useAddShoppingItem , useAllShoppingItem , useDeleteShoppingItem}; 

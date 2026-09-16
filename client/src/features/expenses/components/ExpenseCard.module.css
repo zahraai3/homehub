@@ -37,9 +37,19 @@
 .titleContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
   width: 100%;
 }
+
+.title {
+  flex: 1;
+  min-width: 0;
+
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+
 
 .labelCell {
   font-weight: 600;
@@ -93,6 +103,7 @@
   border: none;
   padding: 4px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .deleteBtn:hover {

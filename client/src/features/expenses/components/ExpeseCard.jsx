@@ -44,7 +44,7 @@ export default function ExpenseCard({
             <td className={styles.titleCell} colSpan={2}>
               
               <div className={styles.titleContent}>
-                <span>{title}</span>
+                <span className={styles.title}>{title}</span>
 
                 {isFullyPaid && (
                   <button

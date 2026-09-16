@@ -42,19 +42,6 @@ export async function makeShoppingItemImportant(itemId) {
     })
 }
 
-export async function updateShoppingListItem({ itemId , updates}){
-    const shoppingItemRef = doc(db , 'shoppingListItems' , itemId)
-
-    const shoppingItemSnap = await getDoc(shoppingItemRef)
-
-    if(!shoppingItemSnap.exists()){
-        throw new Error('NOOTT FOUNNDDD IITEEM ')
-    }
-
-    await updateDoc(shoppingItemRef , updates)
-}
-
-
 export async function deleteShoppingListItem(itemId) {
     const shoppingItemRef = doc(db, 'shoppingListItems', itemId)
 

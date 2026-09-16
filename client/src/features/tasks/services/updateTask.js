@@ -42,17 +42,6 @@ export async function markTaskImportant(itemId) {
     })
 }
 
-export async function updateTask({itemId , updates}) {
-    const taskRef = doc(db , 'tasks' , itemId)
-    const taskSnap = await getDoc(taskRef)
-
-    if(!taskSnap.exists()){
-        throw new Error('TASSKK NOT FOUNDD')
-    }
-
-    await updateDoc(taskRef , updates)
-}
-
 export async function deleteTask(itemId) {
     const taskRef = doc(db , 'tasks' , itemId)
     const taskSnap = await getDoc(taskRef)
