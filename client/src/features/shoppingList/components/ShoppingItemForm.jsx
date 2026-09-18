@@ -121,8 +121,8 @@ const ShoppingItemForm = () => {
                 >
                     <option value="">-- Unassigned --</option>
                     {members?.map((member) => (
-                        <option key={member.id} value={member.id}>
-                            {member.name}
+                        <option key={member.uid} value={member.uid}>
+                            {member.displayName}
                         </option>
                     ))}
                 </select>
