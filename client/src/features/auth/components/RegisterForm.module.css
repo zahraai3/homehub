@@ -149,3 +149,15 @@
   margin-left: 12.5%;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.switchLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-on-primary);
+  text-decoration: underline;
+  text-align: center;
+}
+
+.switchLink:hover {
+  color: var(--border-strong);
+}

@@ -1,6 +1,6 @@
 import {useState} from "react";
 import useRegister from "../hooks/useRegister";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 import styles from './RegisterForm.module.css';
 import { validateRegisterForm } from "../utils/registerValidator";
 
@@ -188,6 +188,10 @@ const RegisterForm = () => {
                 <button type="submit" className={styles['flip-card__btn']} disabled={isPending}>
                     Register
                 </button>
+
+                <Link to='/login' className={styles.switchLink}>
+                    Already have an account? Login
+                </Link>
             </form>
     </div>
     );
