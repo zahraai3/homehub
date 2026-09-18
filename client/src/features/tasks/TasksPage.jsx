@@ -4,7 +4,7 @@ import TaskHeader from './components/TaskHeader'
 import styles from './TaskPage.module.css'
 import { useAuth } from "../auth/context/authContext"
 import { useUserData } from "../auth/hooks/useUserData"
-import { useMembers } from "../members/hooks/useMembers"
+import { useMembers } from '../members/hooks/useMembers'
 import { useAllTasks } from './hooks/useTasks'
 import { getMemberName } from '../members/utils/getMemberName'
 

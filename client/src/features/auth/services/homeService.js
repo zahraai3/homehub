@@ -42,3 +42,24 @@ export async function getHome(userId) {
         ...homeSnap.data()
     }
 }
+
+export async function getHomeByInviteCode(inviteCode) {
+    const homeRef = collection(db , 'homes')
+    const q = query(
+        homeRef,
+        where('inviteCode' , '==' , inviteCode)
+    )
+
+    const homeSnap = await getDocs(q)
+
+    if(homeSnap.empty){
+        throw new Error('INVALID INVITE CODE')
+    }
+
+    const homeDoc = homeSnap.docs[0]
+
+    return {
+        homeId: homeDoc.id,
+        ...homeDoc.data()
+    }
+}

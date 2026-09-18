@@ -82,3 +82,24 @@
   color: var(--text-primary);
   font-size: 18px;
 }
+.titleContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #c62828;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: #8e0000;
+}

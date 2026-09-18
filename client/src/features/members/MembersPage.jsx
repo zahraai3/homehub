@@ -13,6 +13,8 @@ function MembersPage() {
   if (isPending) return <p className={styles.stateMessage}>loading...</p>;
   if (error) return <p className={styles.stateMessage}>Error Happened{error.message}</p>;
 
+  const isCurrentUserAdmin = home?.ownerId === user?.uid;
+
   return (
     <div className={styles.container}>
       {!isHomePending && home?.inviteCode && (
@@ -24,7 +26,12 @@ function MembersPage() {
       ) : (
         <div className={styles.grid}>
           {members.map((member) => (
-            <MemberCard key={member.uid} member={member} />
+            <MemberCard
+              key={member.uid}
+              member={member}
+              isCurrentUserAdmin={isCurrentUserAdmin}
+              currentUserId={user?.uid}
+            />
           ))}
         </div>
       )}

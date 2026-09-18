@@ -1,7 +1,7 @@
 import styles from '../DashboardPage.module.css'
 import {useAuth} from '../../auth/context/authContext'
 import {useUserData } from '../../auth/hooks/useUserData'
-import {useMembers } from '../../members/hooks/useMembers'
+import { useMembers } from '../../members/hooks/useMembers'
 import { useRecentActivity } from '../hooks/useRecentActivity'
 import {getMemberName} from '../../members/utils/getMemberName'
 
