@@ -3,6 +3,7 @@ import ExpenseSettingsSection from './components/ExpenseSettingSection';
 import MembersSection from './components/MembersSection';
 import ThemeSection from './components/ThemeSection';
 import DangerZoneSection from './components/DangerZoneSection';
+import LogoutSection from './components/LogoutSection';
 import styles from './SettingPage.module.css';
 
 function SettingsPage() {
@@ -30,6 +31,8 @@ function SettingsPage() {
             <ThemeSection />
             <hr className={styles.divider} />
             <DangerZoneSection />
+            <hr className={styles.divider} />
+            <LogoutSection />
           </div>
         </div>
       </div>

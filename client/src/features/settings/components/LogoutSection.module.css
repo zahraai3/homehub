@@ -1,0 +1,22 @@
+.logoutBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 2px solid var(--border-blck);
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.logoutBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
