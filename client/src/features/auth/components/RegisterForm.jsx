@@ -39,7 +39,7 @@ const RegisterForm = () => {
             return;
         }
 
-        mutate({email, password , displayName , homeName },
+        mutate({email, password , displayName , homeName, createHome, invite },
             {
                 onSuccess: () => {
                     setEmail('');
