@@ -83,3 +83,40 @@
   font-size: 20px;
   font-weight: 500;
 }
+/* الشاشات الصغيرة (هواتف) */
+@media (max-width: 400px) {
+  .ppc-card {
+    min-width: unset;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+  }
+
+  .ppc-title {
+    font-size: 10px;
+  }
+
+  .ppc-deadline {
+    font-size: 16px;
+  }
+
+  .ppc-row {
+    font-size: 18px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ppc-label {
+    font-size: 18px;
+  }
+
+  .ppc-pay-btn {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .emptyData {
+    font-size: 16px;
+  }
+}

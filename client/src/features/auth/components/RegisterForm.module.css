@@ -161,3 +161,52 @@
 .switchLink:hover {
   color: var(--border-strong);
 }
+
+@media (max-width: 600px) {
+  .wrapper {
+    min-width: unset;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 26px;
+    margin: 12px 0 16px 0;
+  }
+
+  .flip-card__input,
+  .homeName,
+  .inviteCode {
+    width: 90%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .flip-card__btn {
+    width: 130px;
+    height: 45px;
+    font-size: 18px;
+    margin: 16px 0;
+  }
+
+  .creatChoice {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .creatChoice label {
+    font-size: 18px;
+  }
+
+  .createInputs,
+  .joinInputs {
+    width: 90%;
+  }
+
+  .error-message {
+    margin-left: 5%;
+    font-size: 12px;
+  }
+}

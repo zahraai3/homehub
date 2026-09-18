@@ -62,3 +62,26 @@
     color: var(--text-primary)
 
 }
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 12px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cardContainer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  .recentActiv p {
+    font-size: 18px;
+  }
+}

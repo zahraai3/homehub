@@ -43,3 +43,29 @@
   background: var(--primary);
   color: var(--text-on-primary);
 }
+
+/* الشاشات الصغيرة (هواتف) */
+@media (max-width: 480px) {
+  .box {
+    width: 90%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6px 9px;
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+
+  .code {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .copyBtn {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
