@@ -63,3 +63,16 @@ export async function getHomeByInviteCode(inviteCode) {
         ...homeDoc.data()
     }
 }
+
+export async function transferOwnerShip({homeId , newOwnerId}) {
+    const homeRef = doc(db , 'homes' , homeId)
+    const homeSnap = await getDoc(homeRef)
+
+    if(!homeSnap.exists()){
+        throw new Error('HOME NOT FOUND')
+    }
+
+    await updateDoc(homeRef, {
+        ownerId: newOwnerId
+    })
+}
