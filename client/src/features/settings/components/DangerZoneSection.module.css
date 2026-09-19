@@ -25,3 +25,9 @@
   font-size: 1em;
   
 }
+.soloAdminNote {
+  font-size: 1.2em;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 8px 0;
+}
