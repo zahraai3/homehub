@@ -51,7 +51,7 @@ function DangerZoneSection() {
 
       {isAdmin && !hasOtherMembers ? (
         <p className={styles.soloAdminNote}>
-          You're the only member. Delete the home instead of leaving.
+          You're the only member.
         </p>
       ) : (
         <button className={styles.leave} onClick={handleLeaveClick}>
@@ -59,7 +59,6 @@ function DangerZoneSection() {
         </button>
       )}
 
-      <button className={styles.delete}>Delete Home</button>
 
       <ConfirmDialog
         isOpen={isLeaveConfirmOpen}
