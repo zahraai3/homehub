@@ -35,7 +35,7 @@ function ExpenseSettingsSection() {
           checked={splitMethod === 'custom'}
           onChange={(e) => setSplitMethod(e.target.value)}
         />
-        Custom Split
+        Custom Split (not available yet..)
       </label>
     </section>
   );

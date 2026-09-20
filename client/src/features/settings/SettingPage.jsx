@@ -1,6 +1,5 @@
 import HomeInfoSection from './components/HomeInfoSection';
 import ExpenseSettingsSection from './components/ExpenseSettingSection';
-import MembersSection from './components/MembersSection';
 import ThemeSection from './components/ThemeSection';
 import DangerZoneSection from './components/DangerZoneSection';
 import LogoutSection from './components/LogoutSection';
@@ -25,8 +24,6 @@ function SettingsPage() {
 
           {/* Right column */}
           <div className={styles.column}>
-            <hr className={styles.divider} />
-            <MembersSection />
             <hr className={styles.divider} />
             <ThemeSection />
             <hr className={styles.divider} />
