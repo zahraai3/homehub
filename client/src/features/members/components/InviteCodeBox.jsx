@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {Icon} from '@iconify/react'
-import styles from './inviteCodeBox.module.css'
+import styles from './InviteCodeBox.module.css'
 
 export default function InviteCodeBox({inviteCode}){
     const [copied , setCopied] = useState(false)
