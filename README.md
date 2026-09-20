@@ -19,7 +19,7 @@ The main goal of the project was to move beyond small exercises and practice bui
 * Assign tasks to household members
 * Create and manage a shared shopping list
 * Mark shopping items as completed or important
-* Household activity tracking
+* Household activity tracking (currently for the last 10 activities)
 * Leave home (with ownership transfer for admins)
 
 ## Built With
